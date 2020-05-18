@@ -26,7 +26,7 @@ class Fibonacci{
      System.out.println(fib.fibonacci(i));   
      }
      
-    System.out.println("****End****");   
+    System.out.println("****End series****");   
   }
 
   public int fibonacci(int num){
