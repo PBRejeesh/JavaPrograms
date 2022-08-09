@@ -31,8 +31,13 @@ public class EmpSortingNameAndAge {
 		list.add(e9);
 		list.add(e10);
 
+		System.out.println("Lambda ---> Printing Employee Name and Age Ascending Order ........");
 		list.sort(EmpSortingNameAndAge::compareByNameThenAge);
-        print(list);
+		print(list);
+		
+		System.out.println("Lambda ---> Printing Employee Name and Age Descending Order ........");
+		list.sort(EmpSortingNameAndAge::compareByNameThenAgeDescending);
+		print(list);
 	}
 
 	public static void print(List<Employee> list) {
@@ -46,6 +51,16 @@ public class EmpSortingNameAndAge {
 
 		if (emp1.getName().equals(emp2.getName())) {
 			return Integer.compare(emp1.getAge(), emp2.getAge());
+		} else {
+			return emp1.getName().compareTo(emp2.getName());
+		}
+
+	}
+
+	public static int compareByNameThenAgeDescending(Employee emp1, Employee emp2) {
+
+		if (emp1.getName().equals(emp2.getName())) {
+			return Integer.compare(emp2.getAge(), emp1.getAge());
 		} else {
 			return emp1.getName().compareTo(emp2.getName());
 		}
