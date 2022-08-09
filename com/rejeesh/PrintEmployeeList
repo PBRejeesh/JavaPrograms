@@ -1,0 +1,37 @@
+package com.rejeesh;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PrintEmployeeList {
+
+	public static void main(String[] args) {
+
+		Employee e1 = new Employee("AAA", "CS", 100000);
+		Employee e2 = new Employee("BBB", "CS", 200000);
+		Employee e3 = new Employee("CCC", "CS", 300000);
+		Employee e4 = new Employee("DDD", "ES", 150000);
+		Employee e5 = new Employee("EEE", "ES", 400000);
+		Employee e6 = new Employee("FFF", "FS", 10000);
+
+		List<Employee> list = new ArrayList<>();
+
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		list.add(e4);
+		list.add(e5);
+		list.add(e6);
+		print(list);
+
+	}
+
+	public static void print(List<Employee> list) {
+
+		list.forEach(e -> {
+			System.out.println(e.getName() + " " + e.getDept() + " " + e.getSalary());
+		});
+
+	}
+
+}
