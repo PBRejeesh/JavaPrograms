@@ -1,0 +1,55 @@
+package com.rejeesh;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmpSortingNameAndAge {
+
+	public static void main(String[] args) {
+
+		Employee e7 = new Employee("AAA", "CS", 200000, 31);
+		Employee e1 = new Employee("AAA", "CS", 100000, 30);
+		Employee e2 = new Employee("BBB", "CS", 200000, 29);
+		Employee e3 = new Employee("CCC", "CS", 300000, 32);
+		Employee e4 = new Employee("DDD", "ES", 150000, 33);
+		Employee e5 = new Employee("EEE", "ES", 400000, 34);
+		Employee e6 = new Employee("FFF", "FS", 10000, 36);
+		Employee e8 = new Employee("FFF", "FS", 10000, 33);
+		Employee e9 = new Employee("FFF", "FS", 10000, 35);
+		Employee e10 = new Employee("FFF", "FS", 10000, 34);
+
+		List<Employee> list = new ArrayList<>();
+
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		list.add(e4);
+		list.add(e5);
+		list.add(e6);
+		list.add(e7);
+		list.add(e8);
+		list.add(e9);
+		list.add(e10);
+
+		list.sort(EmpSortingNameAndAge::compareByNameThenAge);
+        print(list);
+	}
+
+	public static void print(List<Employee> list) {
+
+		list.forEach(e -> {
+			System.out.println(e.getName() + " " + e.getDept() + " " + e.getSalary() + " " + e.getAge());
+		});
+	}
+
+	public static int compareByNameThenAge(Employee emp1, Employee emp2) {
+
+		if (emp1.getName().equals(emp2.getName())) {
+			return Integer.compare(emp1.getAge(), emp2.getAge());
+		} else {
+			return emp1.getName().compareTo(emp2.getName());
+		}
+
+	}
+
+}
